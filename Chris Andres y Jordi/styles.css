@@ -1,0 +1,297 @@
+/* =========================================
+   RESET Y ESTILOS BASE
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Utilidades para simular Avatares con CSS puro */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.avatar::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+}
+
+.avatar::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 12px;
+    border: 2px solid #333;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    position: absolute;
+    bottom: 8px;
+}
+
+.avatar.large {
+    width: 120px;
+    height: 120px;
+}
+.avatar.large::after { width: 24px; height: 24px; top: 25px; }
+.avatar.large::before { width: 60px; height: 30px; bottom: 20px; }
+
+/* =========================================
+   ESTRUCTURA PRINCIPAL (LAYOUT)
+   ========================================= */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 2px solid #333;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.user-nav {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+}
+
+.content-area {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chat-sidebar {
+    flex: 1;
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 220px;
+}
+
+footer {
+    border-top: 2px solid #333;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: auto;
+}
+
+/* =========================================
+   ESTILOS: PERFIL
+   ========================================= */
+.profile-header {
+    display: flex;
+    gap: 30px;
+    border: 1px solid #ccc;
+    padding: 30px;
+    background: #fafafa;
+    align-items: center;
+}
+
+.profile-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.profile-info .location {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.profile-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+.back-btn:hover { background: #555; }
+
+/* =========================================
+   ESTILOS: FEED Y PUBLICACIONES
+   ========================================= */
+.post-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.post-header h4 { font-size: 1rem; margin: 0; }
+.post-header a { color: #0056b3; font-weight: bold; }
+.post-header a:hover { text-decoration: underline; }
+
+.post-image-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.post-text { margin-bottom: 15px; font-size: 0.95rem; }
+
+.comment-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.comment-icon {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background: #fff;
+}
+
+/* Lista de Contactos (Sidebar) */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.contact-item:hover { background-color: #f0f2f5; }
+
+/* Botón Flotante Móvil */
+.chat-float-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 200;
+    display: none;
+}
+
+/* =========================================
+   RESPONSIVIDAD
+   ========================================= */
+@media (max-width: 768px) {
+    .main-content { flex-direction: column; }
+    .chat-sidebar { display: none; }
+    .chat-float-btn { display: flex; }
+    .profile-header { flex-direction: column; text-align: center; padding: 20px; }
+    .app-container { border: none; }
+    header { position: relative; }
+}
+
+.post-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
